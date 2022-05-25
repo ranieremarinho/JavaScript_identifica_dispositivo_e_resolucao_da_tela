@@ -1,0 +1,31 @@
+  <script type = "text/javascript" >
+    var userAgent = navigator.userAgent.toLowerCase();
+    var devices = new Array('android', 'blackberry', 'elaine', 'htc_tattoo', 'iphone', 'lg', 'mobilexplorer', 
+      'netfront', 'nokia', 'obigo', 'openwave', 'operamini', 'palm', 'samsung', 'series60', 'sony', 'symbian', 
+      'SymbianOS', 'windows ce');
+    var mindex = 'mindex.html';
+    var mpindex = 'mpindex.html';
+
+    function ehMobile(userAgent, devices) {
+      for (var i = 0; i < devices.length; i++) 
+        {
+          if (userAgent.search(devices[i]) > 0) 
+            {
+              return true;
+            }
+        }
+      return false;
+    }
+
+    if (ehMobile(userAgent, devices)) 
+      {
+        if(window.screen.width>320) 
+          {
+            window.location.href = mindex;
+          }
+        else
+          {
+            window.location.href = mpindex;
+          }
+      } 
+  </script>
